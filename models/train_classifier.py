@@ -105,7 +105,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     for column in Y_test.columns:
         print('********************************************************\n')
         print('FEATURE: {}\n'.format(column))
-        print(classification_report(Y_test[column],y_pred_pd[column]))
+        print(classification_report(Y_test[column],y_pred[column]))
     print('Model Accuracy is {0:.2f}% \n'.format(model_accuracy*100))
 
 def save_model(model, model_filepath):
