@@ -102,11 +102,12 @@ def build_model():
 def evaluate_model(model, X_test, Y_test, category_names):
     y_pred = model.predict(X_test)
     model_accuracy = (y_pred == Y_test).mean().mean()
+    print('Model Accuracy is {0:.2f}% \n'.format(model_accuracy*100))
+    y_pred = pd.DataFrame(y_pred, columns = Y_test.columns)
     for column in Y_test.columns:
         print('********************************************************\n')
         print('FEATURE: {}\n'.format(column))
         print(classification_report(Y_test[column],y_pred[column]))
-    print('Model Accuracy is {0:.2f}% \n'.format(model_accuracy*100))
 
 def save_model(model, model_filepath):
     pickle.dump(model, open(model_filepath, 'wb'))
