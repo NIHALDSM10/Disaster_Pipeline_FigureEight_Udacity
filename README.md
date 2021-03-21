@@ -1,6 +1,6 @@
 # Disaster Response Pipeline Project
 
-![Intro Pic](main/classifier_dashboard.png)
+![Intro Pic](classifier_dashboard.png)
 
 ## Table of Contents
 
